@@ -9,7 +9,7 @@ class TaskScreens extends StatelessWidget {
       backgroundColor: Colors.purple,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: (){},
 
       ),
@@ -46,11 +46,21 @@ class TaskScreens extends StatelessWidget {
         ),
         Expanded(
                 child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(topRight: Radius.circular(20.0), topLeft: Radius.circular(20.0))
                     
                   ),
+                  child: ListView(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                       ListTile(
+                        title: constext('this is a Task'),
+                        trailing: Checkbox(value: false, onChanged: (){}),
+                      )
+                    ]
+                  )
               
                 ),
               )
