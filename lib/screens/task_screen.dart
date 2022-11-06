@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskeet/widgets/tasks_list.dart';
+import 'add_task_screen.dart';
 
 class TaskScreens extends StatelessWidget {
   const TaskScreens({Key? key}) : super(key: key);
@@ -11,7 +12,10 @@ class TaskScreens extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              context: context, builder: (context) => AddTaskScreen());
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,11 +27,11 @@ class TaskScreens extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 CircleAvatar(
+                  backgroundColor: Colors.white,
                   child: Icon(
                     Icons.list,
                     color: Colors.purple,
                   ),
-                  backgroundColor: Colors.white,
                 ),
                 SizedBox(
                   height: 10.0,
