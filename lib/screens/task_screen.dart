@@ -53,16 +53,15 @@ class TaskScreens extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20.0),
-                        topLeft: Radius.circular(20.0))),
-                child: TasksList()),
-          )
+          Container(
+              height: 300.0,
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20.0),
+                      topLeft: Radius.circular(20.0))),
+              child: TasksList())
         ],
       ),
     );

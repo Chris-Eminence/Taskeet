@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:taskeet/widgets/task_tile.dart';
+import 'package:taskeet/model/task.dart';
 
-class TasksList extends StatelessWidget {
+class TasksList extends StatefulWidget {
+  @override
+  _TasksListState createState() => _TasksListState();
+}
+
+class _TasksListState extends State<TasksList> {
+  List<Task> task = [
+    Task(name: 'Buy Shoes for DevFest'),
+    Task(name: 'Buy Polo for DevFest'),
+    Task(name: 'Buy Glasses for DevFest')
+  ];
   @override
   Widget build(BuildContext context) {
     return ListView(
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          TaskTile(),
-          TaskTile(),
-          TaskTile(),
-        ]);
+      children: [
+        TaskTile(),
+        TaskTile(),
+        TaskTile(),
+      ],
+    );
   }
 }
