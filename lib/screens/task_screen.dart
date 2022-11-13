@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:taskeet/model/task.dart';
 import 'package:taskeet/widgets/tasks_list.dart';
 import 'add_task_screen.dart';
-import 'package:taskeet/model/task.dart';
 
 class TaskScreens extends StatefulWidget {
   @override
@@ -64,15 +63,17 @@ class _TaskScreenState extends State<TaskScreens> {
               ],
             ),
           ),
-          Container(
-              height: 300.0,
+          Expanded(
+            child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20.0),
                       topLeft: Radius.circular(20.0))),
-              child: TasksList())
+              child: TasksList(tasks),
+            ),
+          )
         ],
       ),
     );
