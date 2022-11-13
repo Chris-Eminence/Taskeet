@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:taskeet/model/task.dart';
 import 'package:taskeet/widgets/tasks_list.dart';
 import 'add_task_screen.dart';
+import 'package:taskeet/model/task.dart';
 
-class TaskScreens extends StatelessWidget {
-  const TaskScreens({Key? key}) : super(key: key);
+class TaskScreens extends StatefulWidget {
+  @override
+  _TaskScreenState createState() => _TaskScreenState();
+}
+
+class _TaskScreenState extends State<TaskScreens> {
+  List<Task> tasks = [
+    Task(name: 'Buy something'),
+    Task(name: 'Buy nothing'),
+    Task(name: 'Buy everything'),
+  ];
 
   @override
   Widget build(BuildContext context) {
